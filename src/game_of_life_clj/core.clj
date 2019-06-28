@@ -59,16 +59,16 @@
             (get-in cell-step-grid [:v i]))))
      grid (range (* width height)))))
 
-(defn- style-row
+(defn- render-row
   [row]
   (clojure.string/join "" (mapv #(if % "█" " ") row)))
 
-(defn- print-grid
+(defn- render-grid
   [grid]
   (let [{:keys [width height v]} grid]
-    (println (str (clojure.string/join "\n"
-     (mapv (fn [i]
-            (style-row (subvec v (* i width) (* (inc i) width)))) (range height))) "\n\n"))))
+    (str (clojure.string/join "\n"
+            (mapv (fn [i]
+              (render-row (subvec v (* i width) (* (inc i) width)))) (range height))) "\n\n")))
 
 (defn- rand-cell
   []
@@ -93,7 +93,7 @@
         (= grid prev-grid) (println (str "Stable in generation " gen "."))
         :else (do
                 (Thread/sleep 15)
-                (print-grid grid)
+                (println (render-grid grid))
                 (recur (step grid)
                        grid
                        (inc gen)))))))
