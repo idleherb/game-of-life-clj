@@ -6,4 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]]
   :main ^:skip-aot game-of-life-clj.core
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}})
+  :profiles {:dev {:dependencies [[midje "1.9.7" :exclusions [org.clojure/clojure]]]
+                   :plugins [[lein-cloverage "1.1.1"]
+                             [lein-midje "3.2.1"]]}
+             :uberjar {:aot :all}})
