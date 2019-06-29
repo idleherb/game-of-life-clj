@@ -1,4 +1,5 @@
-(ns game-of-life-clj.grid)
+(ns game-of-life-clj.grid
+  (:require [game-of-life-clj.cell :as c]))
 
 (defn- rand-cell
   []
@@ -47,26 +48,16 @@
          (filterv some?)
          (count))))
 
-(defn- cell-step
-  [grid coords]
-  (let [cell (cell-at grid coords)
-        num-neighbours (count-alive-neighbours grid coords)
-        new-cell (if cell
-                   (cond
-                     (< num-neighbours 2) nil
-                     (<= 2 num-neighbours 3) :alive
-                     :else nil)
-                   (when (or (= num-neighbours 3)
-                             (= num-neighbours 6)) :alive))]
-    (assoc-in grid [:v (cell-index grid coords)] new-cell)))
-
 (defn step
-  [grid]
-  (let [{:keys [width height]} grid]
-    (reduce
-     (fn [agg-grid i]
-       (let [coords (cell-coords grid i)
-             cell-step-grid (cell-step grid coords)]
-         (assoc-in agg-grid [:v i]
-                   (get-in cell-step-grid [:v i]))))
-     grid (range (* width height)))))
+  ([grid rule]
+   (let [{:keys [width height]} grid]
+     (reduce
+      (fn [agg-grid i]
+        (let [coords (cell-coords grid i)
+              num-neighbours (count-alive-neighbours grid coords)
+              cell (nth (:v grid) i)
+              new-cell (c/step cell num-neighbours rule)]
+          (assoc-in agg-grid [:v i] new-cell)))
+      grid (range (* width height)))))
+  ([grid]
+   (step grid [[3] [2 3]])))
