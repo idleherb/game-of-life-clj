@@ -2,7 +2,7 @@
   (:require [clojure.string :as str]))
 
 (defn parse-rule
-  "Parse rules in Golly syntax, e.g. B3/S23"
+  "Parse rules in RLE syntax, e.g. B3/S23"
   [rule]
   (let [[birth survival] (str/split rule #"/")
         birth (->> (str/split (subs birth 1) #"")
