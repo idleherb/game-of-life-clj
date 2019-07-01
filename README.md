@@ -1,5 +1,7 @@
 # game-of-life-clj
 
+[![CircleCI](https://circleci.com/gh/idleherb/game-of-life-clj.svg?style=svg)](https://circleci.com/gh/idleherb/game-of-life-clj)
+
 A basic version of Conway's Game of Life written in Clojure.
 
 ## Installation
