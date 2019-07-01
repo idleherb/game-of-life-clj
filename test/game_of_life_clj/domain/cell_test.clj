@@ -1,7 +1,7 @@
-(ns game-of-life-clj.cell-test
+(ns game-of-life-clj.domain.cell-test
   (:require [midje.sweet :refer [fact facts =>]]
-            [game-of-life-clj.cell :as c]
-            [game-of-life-clj.util :as u]))
+            [game-of-life-clj.domain.cell :as c]
+            [game-of-life-clj.domain.util :as u]))
 
 (facts "About cells"
   (fact "A cell step runs the given rule"

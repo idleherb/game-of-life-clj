@@ -1,6 +1,6 @@
-(ns game-of-life-clj.util-test
+(ns game-of-life-clj.domain.util-test
   (:require [midje.sweet :refer [fact facts => tabular]]
-            [game-of-life-clj.util :as u]))
+            [game-of-life-clj.domain.util :as u]))
 
 (facts "About utilities"
   (tabular

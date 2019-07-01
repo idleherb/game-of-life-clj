@@ -10,7 +10,19 @@ Clone from <https://github.com/idleherb/game-of-life-clj>.
 
 ## Usage
 
-    $1 lein run [width height RLE-rule]
+### Dev with Hot Reloading
+
+    $1 lein run
+    $2 lein figwheel
+
+In your browser, open <http://0.0.0.0:3449>.
+
+### Prod
+
+    $ lein uberjar
+    $ java -jar game-of-life-clj-standalone.jar host port
+
+In your browser, open <http://0.0.0.0:8080>.
 
 ## License
 

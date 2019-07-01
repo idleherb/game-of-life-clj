@@ -1,6 +1,6 @@
-(ns game-of-life-clj.grid-test
+(ns game-of-life-clj.domain.grid-test
   (:require [midje.sweet :refer [fact facts =>]]
-            [game-of-life-clj.grid :as g]))
+            [game-of-life-clj.domain.grid :as g]))
 
 (def empty-grid {:width 3
                  :height 3

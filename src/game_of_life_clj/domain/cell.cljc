@@ -1,4 +1,4 @@
-(ns game-of-life-clj.cell)
+(ns game-of-life-clj.domain.cell)
 
 (defn step
   [cell num-neighbours rule]

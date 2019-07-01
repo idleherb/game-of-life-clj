@@ -1,5 +1,5 @@
-(ns game-of-life-clj.grid
-  (:require [game-of-life-clj.cell :as c]))
+(ns game-of-life-clj.domain.grid
+  (:require [game-of-life-clj.domain.cell :as c]))
 
 (defn- rand-cell
   []
