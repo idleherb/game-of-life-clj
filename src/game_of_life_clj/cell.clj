@@ -5,4 +5,4 @@
   (let [[birth survival] rule]
     (if cell
       (when (some #{num-neighbours} survival) :alive)
-      (when (some #{num-neighbours} birth) :alive))))
+      (when (some #{num-neighbours} birth)    :alive))))
