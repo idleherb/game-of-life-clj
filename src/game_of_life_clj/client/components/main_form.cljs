@@ -28,7 +28,7 @@
                                    :height height
                                    :rule rule))]
     (swap! s/state assoc :app main-form-state)
-    (a/run-game width height rule)))
+    (a/run-game! width height rule)))
 
 (defn- on-key-down-input
   [code width height rule]

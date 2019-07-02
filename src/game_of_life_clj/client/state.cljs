@@ -3,5 +3,6 @@
 
 (defonce state (r/atom {:app {:width 80
                               :height 40
-                              :rule "B3/S23"}
+                              :rule "B3/S23"
+                              :exit-ch nil}
                         :grid nil}))
