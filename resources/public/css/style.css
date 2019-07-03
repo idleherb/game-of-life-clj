@@ -39,6 +39,15 @@ button.secondary {
   border-color: transparent;
 }
 
+canvas {
+  image-rendering: optimizeSpeed;             /* Older versions of FF          */
+  image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+  image-rendering: -webkit-optimize-contrast; /* Safari                        */
+  image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+  image-rendering: pixelated;                 /* Awesome future-browsers       */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
 label {
   color: #666666;
   display: flex;
@@ -107,20 +116,6 @@ input {
   flex-direction: column;
 }
 
-.cell {
-  margin: 0;
-  padding: 0;
-  width: 10px;
-  height: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cell.alive {
-  background-color:#ec407a;
-}
-
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out
 }
@@ -167,13 +162,8 @@ input {
 }
 
 .grid {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 24px;
+  height: 100%;
+  width: 100%;
 }
 
 .main-form {

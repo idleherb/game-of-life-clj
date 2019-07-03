@@ -20,8 +20,8 @@
 
 (defn- on-click-run-game
   [width height rule]
-  (let [width (sanitize-dimension width 10 160)
-        height (sanitize-dimension height 10 80)
+  (let [width (sanitize-dimension width 10 200)
+        height (sanitize-dimension height 10 200)
         rule (str/trim rule)
         main-form-state (-> (:app @s/state)
                             (assoc :width width
@@ -53,7 +53,7 @@
                     :value @width-input
                     :type "number"
                     :min 10
-                    :max 160
+                    :max 200
                     :required true
                     :on-change #(let [num (-> % .-target .-value (js/parseInt))]
                                   (when-not (js/Number.isNaN num)
@@ -67,7 +67,7 @@
                     :value @height-input
                     :type "number"
                     :min 10
-                    :max 80
+                    :max 200
                     :required true
                     :on-change #(let [num (-> % .-target .-value (js/parseInt))]
                                   (when-not (js/Number.isNaN num)
