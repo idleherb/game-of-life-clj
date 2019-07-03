@@ -4,8 +4,6 @@
 (defn- render-canvas
   [canvas grid]
   (let [{:keys [width height v]} grid
-        _ (set! (.-width  canvas) width)
-        _ (set! (.-height canvas) height)
         ctx (.getContext canvas "2d")]
     (let [image-data (.createImageData ctx width height)]
        (doseq [[cell-idx cell] (map-indexed vector v)]
@@ -28,4 +26,6 @@
       (let [{:keys [width height]} grid-state]
         [:div {:style {:width  (str (* 5 width)  "px")
                        :height (str (* 5 height) "px")}}
-         [:canvas {:class "grid"}]]))}))
+         [:canvas {:class "grid"
+                   :width width
+                   :height height}]]))}))
