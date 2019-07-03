@@ -20,7 +20,7 @@ In your browser, open <http://0.0.0.0:3449>.
 ### Prod
 
     $ lein uberjar
-    $ java -jar game-of-life-clj-standalone.jar host port
+    $ java -jar game-of-life-clj-standalone.jar
 
 In your browser, open <http://0.0.0.0:8080>.
 
